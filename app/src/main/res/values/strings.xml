@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Whatsapp</string>
+
+    <string name="action_search">Search</string>
+    <string name="action_status">Status</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
