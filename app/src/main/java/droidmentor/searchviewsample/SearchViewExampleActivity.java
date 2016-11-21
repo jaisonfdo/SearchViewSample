@@ -179,8 +179,7 @@ public class SearchViewExampleActivity extends AppCompatActivity {
         int width=myView.getWidth();
 
         if(posFromRight>0)
-            width-=(posFromRight*(getResources().getDimensionPixelSize(R.dimen.abc_action_button_min_width_material)) / 2);
-
+            width-=(posFromRight*getResources().getDimensionPixelSize(R.dimen.abc_action_button_min_width_material))-(getResources().getDimensionPixelSize(R.dimen.abc_action_button_min_width_material)/ 2);
         if(containsOverflow)
             width-=getResources().getDimensionPixelSize(R.dimen.abc_action_button_min_width_overflow_material);
 
