@@ -81,7 +81,7 @@ public class SearchViewExampleActivity extends AppCompatActivity {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
                         circleReveal(R.id.searchtoolbar,1,true,false);
                     else
-                        searchtollbar.setVisibility(View.GONE);
+                        searchtollbar.setVisibility(View.INVISIBLE);
                 }
             });
 
@@ -95,7 +95,7 @@ public class SearchViewExampleActivity extends AppCompatActivity {
                         circleReveal(R.id.searchtoolbar,1,true,false);
                     }
                     else
-                        searchtollbar.setVisibility(View.GONE);
+                        searchtollbar.setVisibility(View.INVISIBLE);
                     return true;
                 }
 
