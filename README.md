@@ -6,4 +6,8 @@ Sample app for Android SearchView with circular reveal animation like whatsapp
 
 In this Sample app explains how to customize the SearchView and how to add circular reveal animation to SearchView.
 
-For more information, check out my detailed guide here :  http://droidmentor.com/searchview-animation-like-whatsapp/
+**Note:**
+
+Before executing the project you have to change the **“applicationId”** in the build.gradle(app) and also the **“product_id”** in the city_list.json file which is in the assets folder.
+
+For more information, check out my detailed guide here :  https://droidmentor.com/inapppurchase-subscription/
