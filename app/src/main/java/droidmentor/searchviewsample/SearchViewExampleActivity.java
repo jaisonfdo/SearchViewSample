@@ -28,6 +28,7 @@ public class SearchViewExampleActivity extends AppCompatActivity {
     Toolbar toolbar, searchtollbar;
     Menu search_menu;
     MenuItem item_search;
+    private boolean isExpanded = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +68,19 @@ public class SearchViewExampleActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+    
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode == KeyEvent.KEYCODE_BACK) {
+            if(isExpanded) {
+                isExpanded = false;
+                circleReveal(R.id.searchtoolbar, 1, true, false);
+            } else
+                onBackPressed();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 
     public void setSearchtollbar()
     {
@@ -81,7 +95,7 @@ public class SearchViewExampleActivity extends AppCompatActivity {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
                         circleReveal(R.id.searchtoolbar,1,true,false);
                     else
-                        searchtollbar.setVisibility(View.GONE);
+                        searchtollbar.setVisibility(View.INVISIBLE);
                 }
             });
 
@@ -91,17 +105,19 @@ public class SearchViewExampleActivity extends AppCompatActivity {
                 @Override
                 public boolean onMenuItemActionCollapse(MenuItem item) {
                     // Do something when collapsed
+                    isExpanded = false;
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                         circleReveal(R.id.searchtoolbar,1,true,false);
                     }
                     else
-                        searchtollbar.setVisibility(View.GONE);
+                        searchtollbar.setVisibility(View.INVISIBLE);
                     return true;
                 }
 
                 @Override
                 public boolean onMenuItemActionExpand(MenuItem item) {
                     // Do something when expanded
+                    isExpanded = true;
                     return true;
                 }
             });
